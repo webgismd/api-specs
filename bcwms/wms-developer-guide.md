@@ -140,13 +140,22 @@ CORS is enabled for any domain if you include an apikey with each request.
 
 ## WMS Example requests 
 
-### <GetCapabilities>
-WMS requests can be made for all layers or as a separate service each layer/feature class:
+### GetCapabilities
+WMS requests can be made for all layers or as a separate service each layer/feature class:<br>
 http://openmaps.gov.bc.ca/geo/pub/wms?request=GetCapabilities
 http://openmaps.gov.bc.ca/geo/pub/WHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY/wms?request=GetCapabilities
 
 
-<GetMap> 
+### GetMap
+Give me Vegetation Coverage coloured by age for a given bounding box:<br>
+http://openmaps.gov.bc.ca/geo/pub/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=application/openlayers&TRANSPARENT=true&STYLES=1748&LAYERS=pub%3AWHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY&SRS=EPSG%3A3005&WIDTH=512&HEIGHT=440&BBOX=1069159.051186301%2C1050414.7675306%2C1074045.5446851396%2C1054614.0978811644<br><br>
+Give me all the Dams in the Cariboo District, as KML points:<br>
+https://openmaps.gov.bc.ca/geo/pub/wms?service=wms&request=GetMap&version=1.1.1&format=application/vnd.google-earth.kml+xml&layers=WHSE_WATER_MANAGEMENT.WRIS_DAMS_PUBLIC_SVW&styles=3959&height=2048&width=2048&transparent=false&srs=EPSG:4326&format_options=AUTOFIT:true;KMATTR:true;KMPLACEMARK:true;KMSCORE:100;MODE:download;SUPEROVERLAY:false&CQL_FILTER=%22REGION_NAME%22=%27CARIBOO%27&bbox=-139.46653152270716,39.3982201780243,-110.0651303636062,68.79962133712526<br><br>
+Give me the Bathymetry layer coloured by depth at the extent of the province of BC:<br>
+http://openmaps.gov.bc.ca/geo/pub/wms?service=WMS&version=1.3.0&request=GetMap&layers=pub:WHSE_BASEMAPPING.DBM_BC_7H_MIL_BATHYMETRC_POLY&styles=&bbox=273875.663,362346.895,1870571.76,1735670.856&width=512&height=440&crs=EPSG:3005&format=image/png<br><br>
+
+
+
 <GetFeatureInfo> 
 <GetLegendGraphic>
 
