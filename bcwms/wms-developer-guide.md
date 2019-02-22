@@ -6,19 +6,19 @@ This guide is aimed at developers and web masters that would like to incorporate
 
 A Web Map Service (WMS) as defined here is specifically a web standard developed by the Open Geospatial Consortium (OGC) (see http://www.opengeospatial.org/), an international not for profit organization.
 It is a standardized HTTP interface used for styling & rendering data into a map (image) and perform identify operations. 
-The Metadata record for this service can be found here - BC Web Map Library catalogue.data.gov.bc.ca/dataset/6164a2af-d3ac-4e92-8dbe-51a93bb5e24b 
+
+The Metadata record for this service can be found here - BC Web Map Library catalogue.data.gov.bc.ca/dataset/6164a2af-d3ac-4e92-8dbe-51a93bb5e24b. In addition, each WMS layer has its own specific URL and can be found within each metadata record. For Finding DataBC's Web Map Services (WMS layers) see the B.C. Data Catalogue for http://catalogue.data.gov.bc.ca/dataset?download_audience=Public&res_format=wms
 
 <br>
-DataBC offers data connection services that allow users to view hundreds of data layers from the B.C. Geographic Warehouse (BCGW) in desktop geospatial software or via web-based map applications.  
+DataBC offers web map services (WMS) that allow users to view hundreds of data layers from the B.C. Geographic Warehouse (BCGW) in desktop geospatial software or via web-based map applications.  
 These connection services deliver current data directly from the BCGW so that you or users of your web mapping applications can work with the latest data available without needing to repeatedly download the data.
 These data connection services are provided to offer wide flexibility in map creation and data sharing. 
-All data layers are available according to the industry standard (OGC) Web Map Service (WMS) protocol.
-
+All data layers are available according to the industry standard (OGC) Web Map Service (WMS) over HTTP and HTTPS (GET/POST).
+<br>
 This service provides georeferenced images (maps) and data dynamically from data stored in the B.C. Geographic Warehouse database. 
 WMS-produced maps are generally rendered in image formats such as PNG, GIF or JPEG, or as vector-based graphical elements in Scalable Vector Graphics (SVG) or as Keyhole Markup (KML) image overlay or placemark formats. 
-A WMS classifies its geographic information holdings into “Layers” and offers a finite number of predefined “Styles” in which to display those layers.
-The BCGW WMS offers hundreds of publically accessible layers with multiple styles associated with each. 
-As a queryable WMS service offering, users are also able to make requests that provide attribute information regarding a point, line or polygon.
+<br>
+A WMS classifies its geographic information holdings into “Layers” and offers a finite number of predefined “Styles” in which to display those layers. As a queryable WMS service offering, users are also able to make requests that provide attribute information regarding a point, line or polygon.
  
 Using Web Maps Services can be used through application programming interface (API) specifications such as:
 
@@ -32,36 +32,19 @@ Google Maps API v3
 ## Resource Overview
 DataBC's Web Map Services uses Geoserver (an Opensource project - http://geoserver.org/) to provide both WMS and WFS services. 
 GeoServer is an open source software server written in Java that allows users to share and edit geospatial data. Designed for interoperability, it publishes data from any major spatial data source using open standards.
-
+<br>
 Being a community-driven project, GeoServer is developed, tested, and supported by a diverse group of individuals and organizations from around the world.
-
-GeoServer is the reference implementation of the Open Geospatial Consortium (OGC) Web Feature Service (WFS) and Web Coverage Service (WCS) standards, 
-as well as a high performance certified compliant Web Map Service (WMS). GeoServer forms a core component of the Geospatial Web.
-
+<br>
+GeoServer is the reference implementation of the Open Geospatial Consortium (OGC) Web Feature Service (WFS) and Web Coverage Service (WCS) standards, as well as a high performance certified compliant Web Map Service (WMS). GeoServer forms a core component of the Geospatial Web.
+<br>
 https://docs.geoserver.org/latest/en/user/services/wms/index.html
+<br>
 
-Finding DataBC's Web Map Services (WMS)
-
-See the B.C. Data Catalogue for
-http://catalogue.data.gov.bc.ca/dataset?download_audience=Public&res_format=wms
-
-All B.C. Data Catalogue datasets that are available as WMS will include resource links to the service; and
-A summary of layers in this service as a KML Network Link.
-Find Services at the Feature Class level by
-
-Filtering on the Format Type "WMS"
-Searching using the Geographic Dataset name, such as Natural Resource (NR) Regions
-Searching using the BCGW Object Name, such as “WHSE_ADMIN_BOUNDARIES_ADM_NR_REGIONS_SP”
- 
-Explore these services by
-
-Clicking on “Explore” button for "getCapabilities request WMS" resources
-and then zooming in the preview map to the location and scale where features are visible
 
 Any Questions about the service? Contact datamaps@gov.bc.ca
 
-Types of  WMS Requests:
-<GetCapabilities>
+## Types of  WMS Requests:
+### <GetCapabilities>
 The GetCapabilities operation requests metadata about the operations, services, and data (“capabilities”) that are offered by a WMS server.
 
 The parameters for the GetCapabilities operation are:
@@ -73,7 +56,7 @@ service|	Yes	|Service name. Value is WMS.
 version|	Yes	|Service version. Value is one of 1.0.0, 1.1.0, 1.1.1, 1.3.0.
 request	|Yes	|Operation name. Value is GetCapabilities.
 
-<GetMap> 
+### <GetMap> 
 The GetMap operation requests that the server generate a map. The core parameters specify one or more layers and styles to appear on the map, a bounding box for the map extent, a target spatial reference system, and a width, height, and format for the output. The information needed to specify values for parameters such as layers, styles and srs can be obtained from the Capabilities document.
 
 The response is a map image, or other map output artifact, depending on the format requested. GeoServer provides a wide variety of output formats, described in WMS output formats.
@@ -101,7 +84,7 @@ sld|	No|	A URL referencing a StyledLayerDescriptor XML file which controls or en
 sld_body|	No|	A URL-encoded StyledLayerDescriptor XML document which controls or enhances map layers and styling
 
 
-<GetFeatureInfo> 
+### <GetFeatureInfo> 
 The GetFeatureInfo operation requests the spatial and attribute data for the features at a given location on a map. It is similar to the WFS GetFeature operation, but less flexible in both input and output. Since GeoServer provides a WFS service we recommend using it instead of GetFeatureInfo whenever possible.
 
 The one advantage of GetFeatureInfo is that the request uses an (x,y) pixel value from a returned WMS image. This is easier to use for a naive client that is not able to perform true geographic referencing.
@@ -128,7 +111,7 @@ y or j	|Yes|	Y ordinate of query point on map, in pixels. 0 is the top. j is the
 exceptions|	No|	Format in which to report exceptions. The default value is  application/vnd.ogc.se_xml.
 
 
-<Describelayer>
+### <Describelayer>
 The DescribeLayer operation is used primarily by clients that understand SLD-based WMS. In order to make an SLD one needs to know the structure of the data. WMS and WFS both have operations to do this, so the DescribeLayer operation just routes the client to the appropriate service.
 
 The standard parameters for the DescribeLayer operation are:
@@ -142,15 +125,10 @@ request	|Yes|	Operation name. Value is DescribeLayer.
 layers	|Yes|	See GetMap
 exceptions	|No|	Format in which to report exceptions. The default value is  application/vnd.ogc.se_xml.
 
-<GetLegendGraphic>
+### <GetLegendGraphic>
 The GetLegendGraphic operation provides a mechanism for generating legend graphics as images, beyond the LegendURL reference of WMS Capabilities. 
 It generates a legend based on the style defined on the server, or alternatively based on a user-supplied SLD. 
 For more information on this operation and the various options that GeoServer supports see GetLegendGraphic. https://docs.geoserver.org/latest/en/user/services/wms/get_legend_graphic/index.html#get-legend-graphic
-
-
-WMS requests can be made for all layers or as a separate service each layer/feature class:
-http://openmaps.gov.bc.ca/geo/pub/wms?request=GetCapabilities
-http://openmaps.gov.bc.ca/geo/pub/WHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY/wms?request=GetCapabilities
 
 
 ## Cross-Origin Resource Sharing (CORS)
@@ -158,9 +136,8 @@ CORS is enabled for any domain if you include an apikey with each request.
 
 ## WMS Example requests 
 
-
-
-<GetCapabilities>
+### <GetCapabilities>
+WMS requests can be made for all layers or as a separate service each layer/feature class:
 http://openmaps.gov.bc.ca/geo/pub/wms?request=GetCapabilities
 http://openmaps.gov.bc.ca/geo/pub/WHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY/wms?request=GetCapabilities
 
