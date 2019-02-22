@@ -1,4 +1,4 @@
-# DataBC’s Open Web Map Services
+# DataBC’s Open Web Map Services (WMS)
 # Developer Guide
 This guide is aimed at developers and web masters that would like to incorporate the DataBC's Web Map Services into their applications and websites.
 <br>
@@ -32,7 +32,7 @@ Google Maps API v3<br>
 https://www.opengeospatial.org/resource/products/byspec/?specid=107<br> 
 https://en.wikipedia.org/wiki/Web_Map_Service
 
-## A Note on WHEN to use DataBC's OGC Web Map Sevices vs DataBC's OGC Web Feature Services 
+## A Note on WHEN to use WMS vs WFS
 When to use WMS: <br> 
 1.) You want to create an image that is styled (fastest response) (ie. has predefined cartography)<br> 
 2.) You want to do Very simple Querying of data <br> <br> 
