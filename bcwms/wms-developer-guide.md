@@ -116,7 +116,7 @@ exceptions|	No|	Format in which to report exceptions. The default value is  appl
 
 
 ### <Describelayer>
-The DescribeLayer operation is used primarily by clients that understand SLD-based WMS. In order to make an SLD one needs to know the structure of the data. WMS and WFS both have operations to do this, so the DescribeLayer operation just routes the client to the appropriate service.
+The DescribeLayer operation is used primarily by clients that understand SLD-based WMS. In order to make an SLD one needs to know the structure of the data. WMS and WFS both have operations to do this, so the DescribeLayer operation just routes the client to the appropriate service. (in this instance the WMS call makes a reference to the WFS equivalent - for example) http://openmaps.gov.bc.ca/geo/pub/WHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY/ows?service=wfs&version=1.0.0&request=DescribeFeatureType   
 
 The standard parameters for the DescribeLayer operation are:
 https://docs.geoserver.org/latest/en/user/services/wms/reference.html#describeLayer
@@ -156,7 +156,17 @@ http://openmaps.gov.bc.ca/geo/pub/wms?service=WMS&version=1.3.0&request=GetMap&l
 
 
 
-<GetFeatureInfo> 
-<GetLegendGraphic>
+### GetFeatureInfo
+Give me all the attributes of a vegetated polygon at a specific location in html output: <br>
+http://openmaps.gov.bc.ca/geo/pub/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=pub%3AWHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY&STYLES=1748&LAYERS=pub%3AWHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY&exceptions=application%2Fvnd.ogc.se_inimage&INFO_FORMAT=text%2Fhtml&FEATURE_COUNT=50&X=50&Y=50&SRS=EPSG%3A3005&WIDTH=101&HEIGHT=101&BBOX=1071597.5259694126%2C1050887.1921950383%2C1072561.4631635193%2C1051851.129389145<br><br> And the same in json output:
+http://openmaps.gov.bc.ca/geo/pub/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=pub%3AWHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY&STYLES=1748&LAYERS=pub%3AWHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY&exceptions=application%2Fvnd.ogc.se_inimage&INFO_FORMAT=application%2Fjson&FEATURE_COUNT=50&X=50&Y=50&SRS=EPSG%3A3005&WIDTH=101&HEIGHT=101&BBOX=1071597.5259694126%2C1050887.1921950383%2C1072561.4631635193%2C1051851.129389145
 
+### Describelayer
+The describelayer request like this - http://openmaps.gov.bc.ca/geo/pub/wms?service=WMS&version=1.1.1&request=DescribeLayer&layers=pub:WHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY
+will respond in a reference to the WFS DescribeFeatureType request which lists the attributes/fields of the spatial layer requested- 
+http://openmaps.gov.bc.ca/geo/pub/WHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY/ows?service=wfs&version=1.0.0&request=DescribeFeatureType   
+ 
+### GetLegendGraphic 
+Give me the legend for the Style associated with Age in the vegetative land cover layer (NOTE: style code and name is in the getcapabilities response):
+http://openmaps.gov.bc.ca/geo/pub/WHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=pub%3AWHSE_FOREST_VEGETATION.VEG_COMP_LYR_R1_POLY&style=1748
 
