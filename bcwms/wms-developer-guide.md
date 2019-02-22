@@ -7,7 +7,8 @@ This guide is aimed at developers and web masters that would like to incorporate
 A Web Map Service (WMS) as defined here is specifically a web standard developed by the Open Geospatial Consortium (OGC) (see http://www.opengeospatial.org/), an international not for profit organization.
 It is a standardized HTTP interface used for styling & rendering data into a map (image) and perform identify operations. 
 
-The Metadata record for this service can be found here - BC Web Map Library catalogue.data.gov.bc.ca/dataset/6164a2af-d3ac-4e92-8dbe-51a93bb5e24b. In addition, each WMS layer has its own specific URL and can be found within each metadata record. For Finding DataBC's Web Map Services (WMS layers) see the B.C. Data Catalogue for http://catalogue.data.gov.bc.ca/dataset?download_audience=Public&res_format=wms
+The Metadata record for this service can be found here:<br> 
+BC Web Map Library http://catalogue.data.gov.bc.ca/dataset/6164a2af-d3ac-4e92-8dbe-51a93bb5e24b. <br> In addition, each WMS layer has its own specific URL and can be found within each metadata record. See - http://catalogue.data.gov.bc.ca/dataset?download_audience=Public&res_format=wms
 
 <br>
 DataBC offers web map services (WMS) that allow users to view hundreds of data layers from the B.C. Geographic Warehouse (BCGW) in desktop geospatial software or via web-based map applications.  
