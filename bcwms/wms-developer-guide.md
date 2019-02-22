@@ -10,24 +10,27 @@ It is a standardized HTTP interface used for styling & rendering data into a map
 The Metadata record for this service can be found here:<br> 
 BC Web Map Library http://catalogue.data.gov.bc.ca/dataset/6164a2af-d3ac-4e92-8dbe-51a93bb5e24b. <br> In addition, each WMS layer has its own specific URL and can be found within each metadata record. See - http://catalogue.data.gov.bc.ca/dataset?download_audience=Public&res_format=wms
 
-<br>
+<br><br>
 DataBC offers web map services (WMS) that allow users to view hundreds of data layers from the B.C. Geographic Warehouse (BCGW) in desktop geospatial software or via web-based map applications.  
 These connection services deliver current data directly from the BCGW so that you or users of your web mapping applications can work with the latest data available without needing to repeatedly download the data.
 These data connection services are provided to offer wide flexibility in map creation and data sharing. 
 All data layers are available according to the industry standard (OGC) Web Map Service (WMS) over HTTP and HTTPS (GET/POST).
-<br>
+<br><br>
 This service provides georeferenced images (maps) and data dynamically from data stored in the B.C. Geographic Warehouse database. 
 WMS-produced maps are generally rendered in image formats such as PNG, GIF or JPEG, or as vector-based graphical elements in Scalable Vector Graphics (SVG) or as Keyhole Markup (KML) image overlay or placemark formats. 
-<br>
+<br><br>
 A WMS classifies its geographic information holdings into “Layers” and offers a finite number of predefined “Styles” in which to display those layers. As a queryable WMS service offering, users are also able to make requests that provide attribute information regarding a point, line or polygon.
  
 Using Web Maps Services can be used through application programming interface (API) specifications such as:
-<br>
-Leaflet<br>
-Openlayers<br>
-ArcGIS API for JavaScript<br>
-ArcGIS Online<br>
+<br><br>
+Leaflet https://leafletjs.com/<br>
+Openlayers https://openlayers.org/<br>
+ArcGIS API for JavaScript https://developers.arcgis.com/javascript/<br>
+ArcGIS Online https://doc.arcgis.com/en/arcgis-online/reference/ogc.htm<br> 
 Google Maps API v3<br>
+<br>
+https://www.opengeospatial.org/resource/products/byspec/?specid=107
+https://en.wikipedia.org/wiki/Web_Map_Service
 
 
 ## Resource Overview
