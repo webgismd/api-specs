@@ -32,6 +32,13 @@ Google Maps API v3<br>
 https://www.opengeospatial.org/resource/products/byspec/?specid=107<br> 
 https://en.wikipedia.org/wiki/Web_Map_Service
 
+## A Note on WHEN to use DataBC's OGC Web Map Sevices vs DataBC's OGC Web Feature Services 
+When to use WMS: <br> 
+1.) You want to create an image that is styled (fastest response) (ie. has predefined cartography)<br> 
+2.) You want to do Very simple Querying of data <br> <br> 
+When to use WFS:<br> 
+1.) You want to spatial on non-spatial query a dataset and retrieve the features geometry and attributes (using CQL Filters) 
+2.) You want to find the feature definition (feature’s property names and types with the WFS DescribeFeatureType request)
 
 ## Resource Overview
 DataBC's Web Map Services uses Geoserver (an Opensource project - http://geoserver.org/) to provide both WMS and WFS services. 
