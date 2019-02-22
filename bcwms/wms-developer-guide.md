@@ -1,4 +1,4 @@
-# DataBC’s Open Web Map Services (WMS)
+# DataBC's Open Web Map Services (WMS)
 # Developer Guide
 This guide is aimed at developers and web masters that would like to incorporate the DataBC's Web Map Services into their applications and websites.
 <br>
