@@ -29,7 +29,7 @@ ArcGIS API for JavaScript https://developers.arcgis.com/javascript/<br>
 ArcGIS Online https://doc.arcgis.com/en/arcgis-online/reference/ogc.htm<br> 
 Google Maps API v3<br>
 <br>
-https://www.opengeospatial.org/resource/products/byspec/?specid=107
+https://www.opengeospatial.org/resource/products/byspec/?specid=107<br> 
 https://en.wikipedia.org/wiki/Web_Map_Service
 
 
