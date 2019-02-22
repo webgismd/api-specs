@@ -68,6 +68,7 @@ The parameters for the GetCapabilities operation are:
 https://docs.geoserver.org/latest/en/user/services/wms/reference.html#getcapabilities 
 
 Parameter|	Required?|	Description
+---------------------: | --- |--- |
 service|	Yes	|Service name. Value is WMS.
 version|	Yes	|Service version. Value is one of 1.0.0, 1.1.0, 1.1.1, 1.3.0.
 request	|Yes	|Operation name. Value is GetCapabilities.
@@ -81,6 +82,7 @@ The standard parameters for the GetMap operation are:
 https://docs.geoserver.org/latest/en/user/services/wms/reference.html#getmap
 
 Parameter|	Required?	|Description
+---------------------: | --- |--- |
 service|	Yes|	Service name. Value is WMS.
 version|	Yes|	Service version. Value is one of 1.0.0, 1.1.0, 1.1.1, 1.3.0.
 request|	Yes|	Operation name. Value is GetMap.
@@ -107,7 +109,8 @@ The one advantage of GetFeatureInfo is that the request uses an (x,y) pixel valu
 The standard parameters for the GetFeatureInfo operation are:
 https://docs.geoserver.org/latest/en/user/services/wms/reference.html#getfeatureinfo
 
-Parameter|	Required?	Description
+Parameter|	Required?	|Description
+---------------------: | --- |--- |
 service|	Yes|	Service name. Value is WMS.
 version|	Yes|	Service version. Value is one of 1.0.0, 1.1.0, 1.1.1, 1.3.0.
 request|	Yes|	Operation name. Value is GetFeatureInfo.
@@ -132,6 +135,7 @@ The standard parameters for the DescribeLayer operation are:
 https://docs.geoserver.org/latest/en/user/services/wms/reference.html#describeLayer
 
 Parameter	|Required?|	Description
+---------------------: | --- |--- |
 service	|Yes|	Service name. Value is WMS.
 version	|Yes|	Service version. Value is 1.1.1.
 request	|Yes|	Operation name. Value is DescribeLayer.
