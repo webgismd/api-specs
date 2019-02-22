@@ -21,12 +21,12 @@ WMS-produced maps are generally rendered in image formats such as PNG, GIF or JP
 A WMS classifies its geographic information holdings into “Layers” and offers a finite number of predefined “Styles” in which to display those layers. As a queryable WMS service offering, users are also able to make requests that provide attribute information regarding a point, line or polygon.
  
 Using Web Maps Services can be used through application programming interface (API) specifications such as:
-
-Leaflet
-Openlayers
-ArcGIS API for JavaScript
-ArcGIS Online
-Google Maps API v3
+<br>
+Leaflet<br>
+Openlayers<br>
+ArcGIS API for JavaScript<br>
+ArcGIS Online<br>
+Google Maps API v3<br>
 
 
 ## Resource Overview
